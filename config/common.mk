@@ -36,7 +36,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.lively_timeout=2500 \
     ro.facelock.est_max_time=600 \
     ro.facelock.use_intro_anim=false \
-    dalvik.vm.dex2oat-flags "--compiler-filter=interpret-only" \
     dalvik.vm.profiler=1 \
     dalvik.vm.isa.arm.features=lpae,div
 
