@@ -57,3 +57,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/optipop/prebuilt/lib/libjni_latinime.so:system/lib/libjni_latinime.so
 
+# Backuptool support
+PRODUCT_COPY_FILES += \
+    vendor/optipop/prebuilt/addon.d/50-optipop.sh:system/addon.d/50-optipop.sh \
+    vendor/optipop/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/optipop/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh
