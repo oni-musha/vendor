@@ -16,3 +16,6 @@ ifeq (optipop_hammerhead,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_hammerhead.mk
 endif
 
+ifeq (optipop_shamu,$(TARGET_PRODUCT))
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_shamu.mk
+endif
