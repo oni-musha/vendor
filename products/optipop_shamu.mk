@@ -34,7 +34,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Kernel inline build
 TARGET_KERNEL_SOURCE := kernel/moto/shamu
-TARGET_KERNEL_CONFIG := optipop_shamu_defconfig
+TARGET_KERNEL_CONFIG := lk_defconfig
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
