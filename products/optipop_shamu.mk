@@ -33,8 +33,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="shamu-user 5.0.1 LRX22C 1602158 release-keys"
 
 # Kernel inline build
-TARGET_KERNEL_SOURCE := kernel/moto/shamu
-TARGET_KERNEL_CONFIG := lk_defconfig
+#TARGET_KERNEL_SOURCE := kernel/moto/shamu
+#TARGET_KERNEL_CONFIG := lk_defconfig
 
 # Boot Animation
 PRODUCT_COPY_FILES += \

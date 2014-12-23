@@ -1,0 +1,7 @@
+#!/system/bin/sh
+# Nice Tweaks
+# PrimeDirective and Sonicxml
+# Thanks to mike1986 for the wait for boot code
+
+echo Boot completed... vanirnice-ing like a bauss
+optinice

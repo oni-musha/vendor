@@ -63,7 +63,37 @@ PRODUCT_COPY_FILES += \
     vendor/optipop/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/optipop/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh
 
-#Apps
-PRODUCT_COPY_FILES += \
-    vendor/optipop/prebuilt/app/QuickBoot/QuickBoot.apk:system/app/QuickBoot/QuickBoot.apk
+# QuickBoot (included automagically for non-oppo qcom devices)
+PRODUCT_PACKAGES += \
+    QuickBoot \
+    init.vanir.quickboot.rc
 
+PRODUCT_COPY_FILES += \
+    vendor/optipop/proprietary/common/xbin/sysrw:system/xbin/sysrw \
+    vendor/optipop/proprietary/common/xbin/sysro:system/xbin/sysro \
+    vendor/optipop/proprietary/common/xbin/optiinteractivegovernorgovernor:system/xbin/optiinteractivegovernorgovernor \
+    vendor/optipop/proprietary/common/init.opti.rc:root/init.opti.rc \
+    vendor/optipop/proprietary/common/bin/sysinit:system/bin/sysinit \
+    vendor/optipop/proprietary/common/etc/init.d/00firsties:system/etc/init.d/00firsties
+
+# Blobs common to all devices
+PRODUCT_COPY_FILES += \
+    vendor/optipop/proprietary/common/bin/fix_permissions:system/bin/fix_permissions \
+    vendor/optipop/proprietary/common/xbin/hunter:system/xbin/hunter \
+    vendor/optipop/proprietary/common/xbin/testinitd:system/xbin/testinitd \
+    vendor/optipop/proprietary/common/xbin/opticheckcpu:system/xbin/opticheckcpu \
+    vendor/optipop/proprietary/common/xbin/optinice:system/xbin/optinice
+
+# init.d Tweaks
+PRODUCT_COPY_FILES += \
+    vendor/optipop/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
+    vendor/optipop/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
+    vendor/optipop/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
+    vendor/optipop/proprietary/common/etc/init.d/99optimax:system/etc/init.d/99optimax \
+    vendor/optipop/proprietary/common/etc/cron/cron.minutely/00nicetweaks:/system/etc/cron/cron.minutely/00nicetweaks \
+    vendor/optipop/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
+
+# system and persistent /data boot.d Tweaks - triggered when ro.boot_complete is set to 1
+PRODUCT_COPY_FILES += \
+    vendor/optipop/proprietary/common/bin/userinit:system/bin/userinit \
+    vendor/optipop/proprietary/common/etc/boot.d/00optinice:system/etc/boot.d/00optinice

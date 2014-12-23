@@ -1,0 +1,4 @@
+#!/system/bin/sh
+which optitweakapply && logwrapper bash -c "optitweakapply
+echo \"DONE\""
+exit 0
