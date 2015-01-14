@@ -16,6 +16,9 @@
 
 ifeq (optipop_shamu,$(TARGET_PRODUCT))
 
+# Define TARGET_ARCH for what toolchain libs to use.
+TARGET_ARCH := arm
+
 # Include OptiPop common configuration
 include vendor/optipop/config/common.mk
 
