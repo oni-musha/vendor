@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
 
 # Proprietary latinime lib needed for swyping
 PRODUCT_COPY_FILES += \
-    vendor/optipop/prebuilt/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+    vendor/optipop/prebuilt/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 # Backuptool support
 PRODUCT_COPY_FILES += \
