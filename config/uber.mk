@@ -80,10 +80,18 @@ OPT2 := (strict)
 endif
 
 ifeq (true,$(USE_O3_OPTIMIZATIONS))
-OPT3 := (extreme)
+OPT3 := (O3)
 endif
 
-GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)
+ifeq (true,$(KRAIT_TUNINGS))
+OPT4 := (krait)
+endif
+
+ifeq (true,$(ENABLE_GCCONLY))
+OPT5 := (gcconly)
+endif
+
+GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)$(OPT5)
 ifneq (,$(GCC_OPTIMIZATION_LEVELS))
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.uber.flags=$(GCC_OPTIMIZATION_LEVELS)
