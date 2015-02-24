@@ -40,8 +40,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.profiler=1 \
     dalvik.vm.isa.arm.features=lpae,div
 
-
-
 # Include overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/optipop/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/optipop/overlay/$(TARGET_PRODUCT)
