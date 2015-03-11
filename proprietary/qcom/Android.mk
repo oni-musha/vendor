@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
 # oppo apq8064 and msm8974 devices have their own QuickBoot, and qbcharger support, so the apk and our init triggers aren't needed
-VANIR_QUICKBOOT := true
+VANIR_QUICKBOOT := false
 
 ifeq ($(VANIR_QUICKBOOT),true)
 
