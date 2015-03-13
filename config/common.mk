@@ -98,4 +98,4 @@ PRODUCT_COPY_FILES += \
     vendor/optipop/proprietary/common/etc/boot.d/00optinice:system/etc/boot.d/00optinice
 
 # Include UBERTC Info
-include vendor/config/uber.mk
+include vendor/optipop/config/uber.mk
