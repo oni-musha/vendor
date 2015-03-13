@@ -27,9 +27,8 @@ UBER_AND := $(shell $(UBER_AND_PATH)/bin/arm-linux-androideabi-gcc --version)
 # Find strings in version info
 ifneq ($(filter (UBERTC%),$(UBER_AND)),)
 UBER_AND_NAME := $(filter (UBERTC%),$(UBER_AND))
-UBER_AND_DATE := $(filter 20140% 20141% 20150% 20151%,$(UBER_AND))
-UBER_AND_STATUS := $(filter (release) (prerelease) (experimental),$(UBER_AND))
-UBER_AND_VERSION := $(UBER_AND_NAME)-$(UBER_AND_DATE)-$(UBER_AND_STATUS)
+UBER_AND_DATE := $(filter 20150% 20151%,$(UBER_AND))
+UBER_AND_VERSION := $(UBER_AND_NAME)-$(UBER_AND_DATE)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.uber.android=$(UBER_AND_VERSION)
 endif
@@ -39,9 +38,8 @@ UBER_KERNEL := $(shell $(UBER_KERNEL_PATH)/bin/arm-eabi-gcc --version)
 
 ifneq ($(filter (UBERTC%),$(UBER_KERNEL)),)
 UBER_KERNEL_NAME := $(filter (UBERTC%),$(UBER_KERNEL))
-UBER_KERNEL_DATE := $(filter 20140% 20141% 20150% 20151%,$(UBER_KERNEL))
-UBER_KERNEL_STATUS := $(filter (release) (prerelease) (experimental),$(UBER_KERNEL))
-UBER_KERNEL_VERSION := $(UBER_KERNEL_NAME)-$(UBER_KERNEL_DATE)-$(UBER_KERNEL_STATUS)
+UBER_KERNEL_DATE := $(filter 20150% 20151%,$(UBER_KERNEL))
+UBER_KERNEL_VERSION := $(UBER_KERNEL_NAME)-$(UBER_KERNEL_DATE)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.uber.kernel=$(UBER_KERNEL_VERSION)
 endif
@@ -62,9 +60,8 @@ UBER_AND := $(shell $(UBER_AND_PATH)/bin/aarch64-linux-android-gcc --version)
 # Find strings in version info
 ifneq ($(filter (UBERTC%),$(UBER_AND)),)
 UBER_AND_NAME := $(filter (UBERTC%),$(UBER_AND))
-UBER_AND_DATE := $(filter 20140% 20141% 20150% 20151%,$(UBER_AND))
-UBER_AND_STATUS := $(filter (release) (prerelease) (experimental),$(UBER_AND))
-UBER_AND_VERSION := $(UBER_AND_NAME)-$(UBER_AND_DATE)-$(UBER_AND_STATUS)
+UBER_AND_DATE := $(filter 20150% 20151%,$(UBER_AND))
+UBER_AND_VERSION := $(UBER_AND_NAME)-$(UBER_AND_DATE)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.uber.android=$(UBER_AND_VERSION)
 endif
