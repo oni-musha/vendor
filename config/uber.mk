@@ -13,8 +13,13 @@ endif
 ifeq (linux,$(HOST_OS))
 ifeq (arm,$(TARGET_ARCH))
 # Path to toolchain
+ifeq (4.8,$(TARGET_GCC_VERSION))
 UBER_AND_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-4.8
 UBER_AND := $(shell $(UBER_AND_PATH)/bin/arm-linux-androideabi-gcc --version)
+else
+UBER_AND_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-4.9
+UBER_AND := $(shell $(UBER_AND_PATH)/bin/arm-linux-androideabi-gcc --version)
+endif
 
 # Find strings in version info
 ifneq ($(filter (UBERTC%),$(UBER_AND)),)
