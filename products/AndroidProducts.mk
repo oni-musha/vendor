@@ -23,3 +23,7 @@ endif
 ifeq (optipop_shamu,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_shamu.mk
 endif
+
+ifeq (optipop_manta,$(TARGET_PRODUCT))
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_manta.mk
+endif
