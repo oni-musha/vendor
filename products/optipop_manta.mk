@@ -19,6 +19,9 @@ ifeq (optipop_manta,$(TARGET_PRODUCT))
 # Define TARGET_ARCH for what toolchain libs to use.
 TARGET_ARCH := arm
 
+# Kernel toolchain
+$(combo_2nd_arch_prefix)TARGET_GCC_VERSION_ARM := 4.8
+
 # Include OptiPop common configuration
 include vendor/optipop/config/common.mk
 
