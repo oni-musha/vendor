@@ -30,7 +30,7 @@ PRODUCT_NAME := optipop_manta
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Nexus 10
 PRODUCT_MANUFACTURER := Samsung
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME="manta" BUILD_FINGERPRINT="google/mantaray/manta:5.1/LMY47D/1743759:user/release-keys" PRIVATE_BUILD_DESC="manta-user 5.1 LMY47D 1743759 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME="manta" BUILD_FINGERPRINT="google/mantaray/manta:5.1/LMY47D/1743759:user/release-keys" PRIVATE_BUILD_DESC="mantaray-user 5.1 LMY47D 1743759 release-keys"
 
 # Kernel inline build
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
