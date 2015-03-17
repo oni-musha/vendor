@@ -36,4 +36,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME="manta" BUILD_FINGERPRINT="google/m
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
 TARGET_KERNEL_CONFIG := khaon_manta_defconfig
 
+# Boot Animation
+PRODUCT_COPY_FILES += \
+    vendor/optipop/prebuilt/bootanimation/bootanimation_2560.zip:system/media/bootanimation.zip
+
 endif
