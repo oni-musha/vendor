@@ -80,7 +80,7 @@ OPT3 := (O3)
 endif
 
 ifeq (true,$(KRAIT_TUNINGS))
-OPT4 := (krait)
+OPT4 := (tuned_for_$(TARGET_CPU_VARIANT))
 endif
 
 ifeq (true,$(ENABLE_GCCONLY))
