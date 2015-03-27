@@ -23,7 +23,7 @@ TARGET_ARCH := arm
 include vendor/optipop/config/common.mk
 
 # Inherit AOSP device configuration
-$(call inherit-product, device/moto/shamu/aosp_shamu.mk)
+$(call inherit-product, device/moto/shamu/full_shamu.mk)
 
 # Override AOSP build properties
 PRODUCT_NAME := optipop_shamu
