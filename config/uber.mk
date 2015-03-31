@@ -45,10 +45,6 @@ UBER_KERNEL_VERSION := $(UBER_KERNEL_NAME)-$(UBER_KERNEL_DATE)
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.uber.kernel=$(UBER_KERNEL_VERSION)
 endif
-
-ifeq (true,$(GRAPHITE_OPTS))
-OPT1 := (graphite)
-endif
 endif
 
 ifeq (arm64,$(TARGET_ARCH))
@@ -64,11 +60,10 @@ UBER_AND_VERSION := $(UBER_AND_NAME)-$(UBER_AND_DATE)
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.uber.android=$(UBER_AND_VERSION)
 endif
+endif
 
 ifeq (true,$(USE_O3_OPTIMIZATIONS))
 OPT1 := (O3)
-endif
-endif
 endif
 
 ifeq (true,$(STRICT_ALIASING))
@@ -107,4 +102,5 @@ GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)$(OPT5)$(OPT6)$(OPT7)$(OP
 ifneq (,$(GCC_OPTIMIZATION_LEVELS))
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.uber.flags=$(GCC_OPTIMIZATION_LEVELS)
+endif
 endif
