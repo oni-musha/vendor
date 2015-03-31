@@ -65,8 +65,8 @@ ADDITIONAL_BUILD_PROPERTIES += \
     ro.uber.android=$(UBER_AND_VERSION)
 endif
 
-ifeq (true,$(GRAPHITE_OPTS))
-OPT1 := (graphite)
+ifeq (true,$(USE_O3_OPTIMIZATIONS))
+OPT1 := (O3)
 endif
 endif
 endif
@@ -75,8 +75,8 @@ ifeq (true,$(STRICT_ALIASING))
 OPT2 := (strict)
 endif
 
-ifeq (true,$(USE_O3_OPTIMIZATIONS))
-OPT3 := (O3)
+ifeq (true,$(GRAPHITE_OPTS))
+OPT3 := (graphite)
 endif
 
 ifeq (true,$(KRAIT_TUNINGS))
@@ -87,19 +87,23 @@ ifeq (true,$(ENABLE_GCCONLY))
 OPT5 := (gcconly)
 endif
 
-ifeq (true,$(TARGET_USE_PIPE))
-OPT6 := (pipe)
+ifeq (true,$(FLOOP_NEST_OPTIMIZE))
+OPT6 := (floop_nest_optimize)
 endif
 
-ifeq (true,$(FLOOP_NEST_OPTIMIZE))
-OPT7 := (floop_nest_optimize)
+ifeq (true,$(TARGET_USE_PIPE))
+OPT7 := (pipe)
 endif
 
 ifeq (true,$(USE_HOST_4_8))
 OPT8 := (use_host_4_8)
 endif
 
-GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)$(OPT5)$(OPT6)$(OPT7)$(OPT8)
+ifeq (true,$(FFAST_MATH))
+OPT9 := (fast_math_enabled)
+endif
+
+GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)$(OPT5)$(OPT6)$(OPT7)$(OPT8)$(OPT9)
 ifneq (,$(GCC_OPTIMIZATION_LEVELS))
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.uber.flags=$(GCC_OPTIMIZATION_LEVELS)
