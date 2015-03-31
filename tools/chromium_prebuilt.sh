@@ -105,8 +105,8 @@ PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/lib/libwebviewchromium_loader.so:system/lib/libwebviewchromium_loader.so
 
 
-\$(shell mkdir -p \$(OUT_DIR)/target/product/__DEVICE__/system/app/webview/lib/arm/)
-\$(shell cp -r \$(LOCAL_PATH)/app/webview/lib/arm/libwebviewchromium.so \$(OUT_DIR)/target/product/__DEVICE__/system/app/webview/lib/arm/libwebviewchromium.so)
+\$(shell mkdir -p \$(OUT)/system/app/webview/lib/arm/)
+\$(shell cp -r \$(LOCAL_PATH)/app/webview/lib/arm/libwebviewchromium.so \$(OUT)/system/app/webview/lib/arm/libwebviewchromium.so)
 
 EOF
 
