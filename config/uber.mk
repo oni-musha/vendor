@@ -75,7 +75,7 @@ OPT3 := (graphite)
 endif
 
 ifeq (true,$(KRAIT_TUNINGS))
-OPT4 := (tuned_for_$(TARGET_CPU_VARIANT))
+OPT4 := ($(TARGET_CPU_VARIANT))
 endif
 
 ifeq (true,$(ENABLE_GCCONLY))
@@ -91,11 +91,11 @@ OPT7 := (pipe)
 endif
 
 ifeq (true,$(USE_HOST_4_8))
-OPT8 := (use_host_4_8)
+OPT8 := (host_4_8)
 endif
 
 ifeq (true,$(FFAST_MATH))
-OPT9 := (fast_math_enabled)
+OPT9 := (fast_math)
 endif
 
 GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)$(OPT5)$(OPT6)$(OPT7)$(OPT8)$(OPT9)
