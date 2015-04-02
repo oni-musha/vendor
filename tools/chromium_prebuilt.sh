@@ -41,10 +41,8 @@ mkdir -p $PREBUILT_DIR/lib
 
 if [ -d $TARGET_DIR ]; then
     echo "Copying files..."
-    cp -r $TARGET_DIR/system/app/webview $PREBUILT_DIR/app/
+    cp $TARGET_DIR/system/app/webview/webview.apk $PREBUILT_DIR/app/webview.apk
     cp $TARGET_DIR/system/lib/libwebviewchromium.so $PREBUILT_DIR/lib/libwebviewchromium.so
-    cp $TARGET_DIR/system/lib/libwebviewchromium_plat_support.so $PREBUILT_DIR/lib/libwebviewchromium_plat_support.so
-    cp $TARGET_DIR/system/lib/libwebviewchromium_loader.so $PREBUILT_DIR/lib/libwebviewchromium_loader.so
 else
     echo "Please ensure that you have ran a full build prior to running this script!"
     return 1;
@@ -56,7 +54,7 @@ HASH=$(git --git-dir=$TOP/external/chromium_org/.git --work-tree=$TOP/external/c
 echo $HASH > $PREBUILT_DIR/hash.txt
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > $PREBUILT_DIR/Android.mk
-# Copyright (C) 2014 The OmniROM Project
+# Copyright (C) 2015 OptiPop project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -75,6 +73,27 @@ ifeq (\$(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 
 LOCAL_PATH := \$(call my-dir)
 
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libwebviewchromium
+LOCAL_SRC_FILES := lib/libwebviewchromium.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := \$(TARGET_OUT_SHARED_LIBRARIES)
+LOCAL_MODULE_TAGS := optional
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := webview
+LOCAL_SRC_FILES := app/webview.apk
+LOCAL_JNI_SHARED_LIBRARIES += libwebviewchromium
+LOCAL_REQUIRED_MODULES := libwebviewchromium libwebviewchromium_loader libwebviewchromium_plat_support
+LOCAL_STATIC_JAVA_LIBRARIES += android_webview_java_with_new_resources
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_CERTIFICATE := platform
+include \$(BUILD_PREBUILT)
+
 include \$(call all-makefiles-under,\$(LOCAL_PATH))
 endif
 endif
@@ -82,7 +101,7 @@ endif
 EOF
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > $PREBUILT_DIR/chromium_prebuilt.mk
-# Copyright (C) 2014 The OmniROM Project
+# Copyright (C) 2015 OptiPop project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -96,17 +115,9 @@ EOF
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := prebuilts/chromium/__DEVICE__/
+LOCAL_PATH := \$(call my-dir)
 
-PRODUCT_COPY_FILES += \\
-    \$(LOCAL_PATH)/app/webview/webview.apk:system/app/webview/webview.apk \\
-    \$(LOCAL_PATH)/lib/libwebviewchromium.so:system/lib/libwebviewchromium.so \\
-    \$(LOCAL_PATH)/lib/libwebviewchromium_plat_support.so:system/lib/libwebviewchromium_plat_support.so \\
-    \$(LOCAL_PATH)/lib/libwebviewchromium_loader.so:system/lib/libwebviewchromium_loader.so
-
-
-\$(shell mkdir -p \$(OUT)/system/app/webview/lib/arm/)
-\$(shell cp -r \$(LOCAL_PATH)/app/webview/lib/arm/libwebviewchromium.so \$(OUT)/system/app/webview/lib/arm/libwebviewchromium.so)
+PRODUCT_PACKAGES += webview
 
 EOF
 
