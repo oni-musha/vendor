@@ -33,14 +33,22 @@ PRODUCT_NAME := optipop_manta
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Nexus 10
 PRODUCT_MANUFACTURER := Samsung
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME="manta" BUILD_FINGERPRINT="google/mantaray/manta:5.1/LMY47D/1743759:user/release-keys" PRIVATE_BUILD_DESC="mantaray-user 5.1 LMY47D 1743759 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME="manta" BUILD_FINGERPRINT="google/mantaray/manta:5.1/LMY47I/1767468:user/release-keys" PRIVATE_BUILD_DESC="mantaray-user 5.1 LMY47I 1767468 release-keys"
 
 # Kernel inline build
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
 TARGET_KERNEL_CONFIG := khaon_manta_defconfig
 
+BOARD_USE_DEVICE_AUDIO_EFFECTS_CONF := true
+
 # Boot Animation
 PRODUCT_COPY_FILES += \
     vendor/optipop/prebuilt/bootanimation/bootanimation_2560.zip:system/media/bootanimation.zip
+    
+# Extra products packages
+PRODUCT_PACKAGES += \
+	Viper4Android \
+	AdAway \
+	BetterBatteryStats
 
 endif
