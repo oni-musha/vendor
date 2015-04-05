@@ -38,7 +38,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.est_max_time=600 \
     ro.facelock.use_intro_anim=false \
     dalvik.vm.profiler=1 \
-    dalvik.vm.isa.arm.features=lpae,div
+    dalvik.vm.isa.arm.features=lpae,div \
+    dalvik.vm.image-dex2oat-filter=everything \
+    dalvik.vm.dex2oat-filter=everything
 
 # Include overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/optipop/overlay/common
