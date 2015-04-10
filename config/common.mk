@@ -40,7 +40,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.profiler=1 \
     dalvik.vm.isa.arm.features=lpae,div \
     dalvik.vm.image-dex2oat-filter=everything \
-    dalvik.vm.dex2oat-filter=everything
+    dalvik.vm.dex2oat-filter=everything \
+    ro.setupwizard.network_required=false \
+    ro.setupwizard.gservices_delay=-1
 
 # Include overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/optipop/overlay/common
