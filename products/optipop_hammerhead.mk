@@ -30,7 +30,7 @@ PRODUCT_NAME := optipop_hammerhead
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Nexus 5
 PRODUCT_MANUFACTURER := LGE
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME="hammerhead" BUILD_FINGERPRINT="google/hammerhead/hammerhead:5.1/LMY47O/1767468:user/release-keys" PRIVATE_BUILD_DESC="hammerhead-user 5.1 LMY47O 1767468 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME="hammerhead" BUILD_FINGERPRINT="google/hammerhead/hammerhead:5.1/LMY47V/1767468:user/release-keys" PRIVATE_BUILD_DESC="hammerhead-user 5.1 LMY47V 1767468 release-keys"
 # Kernel inline build
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 TARGET_KERNEL_CONFIG := optipop_hammerhead_defconfig
