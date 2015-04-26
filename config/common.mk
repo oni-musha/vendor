@@ -100,7 +100,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     ScreenRecorder \
     libscreenrecorder \
-    LockClock
+    LockClock \
+    Exchange2
 
 # Squisher Location
 SQUISHER_SCRIPT := vendor/optipop/tools/squisher
