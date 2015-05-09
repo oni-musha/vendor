@@ -13,38 +13,43 @@ endif
 ifeq (linux,$(HOST_OS))
 ifeq (arm,$(TARGET_ARCH))
 # Path to toolchain
-ifeq (4.9,$(TARGET_GCC_VERSION))
-UBER_AND_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-4.9
-UBER_AND := $(shell $(UBER_AND_PATH)/bin/arm-linux-androideabi-gcc --version)
-else
-UBER_AND_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-5.1
-UBER_AND := $(shell $(UBER_AND_PATH)/bin/arm-linux-androideabi-gcc --version)
-endif
+AND_TC_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$(TARGET_GCC_VERSION)
+AND_TC_VERSION := $(shell $(AND_TC_PATH)/bin/arm-linux-androideabi-gcc --version 2>&1)
+AND_TC_VERSION_NUMBER := $(shell $(AND_TC_PATH)/bin/arm-linux-androideabi-gcc -dumpversion 2>&1)
 
 # Find strings in version info
-ifneq ($(filter (UBERTC%),$(UBER_AND)),)
-UBER_AND_NAME := $(filter (UBERTC%),$(UBER_AND))
-UBER_AND_DATE := $(filter 20150% 20151%,$(UBER_AND))
-UBER_AND_VERSION := $(UBER_AND_NAME)-$(UBER_AND_DATE)
-ADDITIONAL_BUILD_PROPERTIES += \
-    ro.uber.android=$(UBER_AND_VERSION)
+ifneq ($(filter (UBERTC%),$(AND_TC_VERSION)),)
+AND_TC_NAME := UBERTC
+else
+AND_TC_NAME := GCC
 endif
+
+AND_TC_DATE := $(filter 2015% 2014%,$(AND_TC_VERSION))
+
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.uber.android=($(AND_TC_NAME)[SPACE]$(AND_TC_VERSION_NUMBER))[SPACE]$(AND_TC_DATE)
 
 ifneq ($(TARGET_GCC_VERSION_ARM),)
-UBER_KERNEL_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(TARGET_GCC_VERSION_ARM)
-UBER_KERNEL := $(shell $(UBER_KERNEL_PATH)/bin/arm-eabi-gcc --version)
+KERNEL_TC_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(TARGET_GCC_VERSION_ARM)
 else
-UBER_KERNEL_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(TARGET_GCC_VERSION)
-UBER_KERNEL := $(shell $(UBER_KERNEL_PATH)/bin/arm-eabi-gcc --version)
+KERNEL_TC_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(TARGET_GCC_VERSION)
 endif
 
-ifneq ($(filter (UBERTC%),$(UBER_KERNEL)),)
-UBER_KERNEL_NAME := $(filter (UBERTC%),$(UBER_KERNEL))
-UBER_KERNEL_DATE := $(filter 20150% 20151%,$(UBER_KERNEL))
-UBER_KERNEL_VERSION := $(UBER_KERNEL_NAME)-$(UBER_KERNEL_DATE)
-ADDITIONAL_BUILD_PROPERTIES += \
-    ro.uber.kernel=$(UBER_KERNEL_VERSION)
+KERNEL_TC_VERSION := $(shell $(KERNEL_TC_PATH)/bin/arm-eabi-gcc --version 2>&1)
+KERNEL_TC_VERSION_NUMBER := $(shell $(KERNEL_TC_PATH)/bin/arm-eabi-gcc -dumpversion 2>&1)
+
+# Find strings in version info
+ifneq ($(filter (UBERTC%),$(KERNEL_TC_VERSION)),)
+KERNEL_TC_NAME := UBERTC
+else
+KERNEL_TC_NAMEE := GCC
 endif
+
+KERNEL_TC_DATE := $(filter 2015% 2014%,$(KERNEL_TC_VERSION))
+
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.uber.kernel=($(KERNEL_TC_NAME)[SPACE]$(KERNEL_TC_VERSION_NUMBER))[SPACE]$(KERNEL_TC_DATE)
+
 endif
 
 ifeq (arm64,$(TARGET_ARCH))
