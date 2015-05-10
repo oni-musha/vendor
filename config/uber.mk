@@ -30,7 +30,7 @@ ifeq ($(AND_TC_DATE),)
 endif
 
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.uber.android=($(AND_TC_NAME)[SPACE]$(AND_TC_VERSION_NUMBER))[SPACE]$(AND_TC_DATE)
+    ro.uber.android=($(AND_TC_NAME)-$(AND_TC_VERSION_NUMBER))-$(AND_TC_DATE)
 
 ifneq ($(TARGET_GCC_VERSION_ARM),)
 KERNEL_TC_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(TARGET_GCC_VERSION_ARM)
@@ -55,7 +55,7 @@ ifeq ($(KERNEL_TC_DATE),)
 endif
 
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.uber.kernel=($(KERNEL_TC_NAME)[SPACE]$(KERNEL_TC_VERSION_NUMBER))[SPACE]$(KERNEL_TC_DATE)
+    ro.uber.kernel=($(KERNEL_TC_NAME)-$(KERNEL_TC_VERSION_NUMBER))-$(KERNEL_TC_DATE)
 
 endif
 
