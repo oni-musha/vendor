@@ -45,7 +45,7 @@ KERNEL_TC_VERSION_NUMBER := $(shell $(KERNEL_TC_PATH)/bin/arm-eabi-gcc -dumpvers
 ifneq ($(filter (UBERTC%),$(KERNEL_TC_VERSION)),)
 KERNEL_TC_NAME := UBERTC
 else
-KERNEL_TC_NAMEE := GCC
+KERNEL_TC_NAME := GCC
 endif
 
 KERNEL_TC_DATE := $(filter 2015% ,$(KERNEL_TC_VERSION))
