@@ -31,3 +31,7 @@ endif
 ifeq (optipop_flo,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_flo.mk
 endif
+
+ifeq (optipop_grouper,$(TARGET_PRODUCT))
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_grouper.mk
+endif
