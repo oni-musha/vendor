@@ -7,9 +7,6 @@ TARGET_ARCH := arm
 # Include OptiPop common configuration
 include vendor/optipop/config/common.mk
 
-# Inherit common product files
-$(call inherit-product, vendor/optipop/config/common.mk)
-
 # Setup device specific product configuration
 PRODUCT_NAME := optipop_flo
 PRODUCT_BRAND := google
