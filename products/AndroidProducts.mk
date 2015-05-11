@@ -1,4 +1,4 @@
-# Copyright (C) 2014 OptiPop Project
+# Copyright (C) 2015 OptiPop Project
 #
 # Licensed under the Apurityche License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,10 +14,6 @@
 
 ifeq (optipop_hammerhead,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_hammerhead.mk
-endif
-
-ifeq (optipop_d801,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_d801.mk
 endif
 
 ifeq (optipop_shamu,$(TARGET_PRODUCT))
