@@ -93,12 +93,19 @@ PRODUCT_COPY_FILES += \
     vendor/optipop/proprietary/common/xbin/opticheckcpu:system/xbin/opticheckcpu \
     vendor/optipop/proprietary/common/xbin/optinice:system/xbin/optinice
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    BUILD_DISPLAY_ID=$(BUILD_ID) \
-    slim.ota.version=$(PRODUCT_VERSION_MAJOR)-$(SLIM_POSTFIX) \
-    ro.slim.version=$(SLIM_VERSION) \
-    ro.modversion=$(SLIM_MOD_VERSION) \
-    ro.slim.buildtype=$(SLIM_BUILD_TYPE)
+# init.d Tweaks
+PRODUCT_COPY_FILES += \
+    vendor/optipop/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
+    vendor/optipop/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
+    vendor/optipop/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
+    vendor/optipop/proprietary/common/etc/init.d/99optimax:system/etc/init.d/99optimax \
+    vendor/optipop/proprietary/common/etc/cron/cron.minutely/00nicetweaks:/system/etc/cron/cron.minutely/00nicetweaks \
+    vendor/optipop/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
+
+# system and persistent /data boot.d Tweaks - triggered when ro.boot_complete is set to 1
+PRODUCT_COPY_FILES += \
+    vendor/optipop/proprietary/common/bin/userinit:system/bin/userinit \
+    vendor/optipop/proprietary/common/etc/boot.d/00optinice:system/etc/boot.d/00optinice
 
 # Additional Packages
 PRODUCT_PACKAGES += \
