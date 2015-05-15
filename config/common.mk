@@ -37,14 +37,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.lively_timeout=2500 \
     ro.facelock.est_max_time=600 \
     ro.facelock.use_intro_anim=false \
-    dalvik.vm.profiler=1 \
-    dalvik.vm.isa.arm.features=lpae,div \
-    dalvik.vm.image-dex2oat-filter=everything \
-    dalvik.vm.dex2oat-filter=everything \
     ro.setupwizard.network_required=false \
     ro.setupwizard.gservices_delay=-1 \
     net.tethering.noprovisioning=true \
     persist.sys.dun.override=0
+
+ifneq ($(TARGET_PRODUCT),optipop_grouper)
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.profiler=1 \
+    dalvik.vm.isa.arm.features=lpae,div \
+    dalvik.vm.image-dex2oat-filter=everything \
+    dalvik.vm.dex2oat-filter=everything
+endif
 
 # Include overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/optipop/overlay/common
