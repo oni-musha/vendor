@@ -1,4 +1,4 @@
-# Copyright (C) 2014 OptiPop Project
+# Copyright (C) 2015 OptiPop Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,13 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# Check for target product
-
-ifeq (optipop_manta,$(TARGET_PRODUCT))
-
-# Define TARGET_ARCH for what toolchain libs to use.
-TARGET_ARCH := arm
 
 # Kernel toolchain
 $(combo_2nd_arch_prefix)TARGET_GCC_VERSION_ARM := 4.8
@@ -33,7 +26,7 @@ PRODUCT_NAME := optipop_manta
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Nexus 10
 PRODUCT_MANUFACTURER := Samsung
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME="manta" BUILD_FINGERPRINT="google/mantaray/manta:5.1/LMY47I/1767468:user/release-keys" PRIVATE_BUILD_DESC="mantaray-user 5.1 LMY47I 1767468 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME="manta" BUILD_FINGERPRINT="google/mantaray/manta:5.1.1/LMY48B/1863243:user/release-keys" PRIVATE_BUILD_DESC="mantaray-user 5.1.1 LMY48B 1863243 release-keys"
 
 # Kernel inline build
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
@@ -43,12 +36,10 @@ BOARD_USE_DEVICE_AUDIO_EFFECTS_CONF := true
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
-    vendor/optipop/prebuilt/bootanimation/bootanimation_2560.zip:system/media/bootanimation.zip
+    vendor/optipop/prebuilt/bootanimation/bootanimation_1600.zip:system/media/bootanimation.zip
     
 # Extra products packages
 PRODUCT_PACKAGES += \
 	Viper4Android \
 	AdAway \
 	BetterBatteryStats
-
-endif

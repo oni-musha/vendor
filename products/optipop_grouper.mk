@@ -28,8 +28,8 @@ PRODUCT_MANUFACTURER := asus
 # Build prop fingerprint overrides
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=nakasi \
-    BUILD_FINGERPRINT=google/nakasi/grouper:5.1/LMY47D/1743759:user/release-keys \
-    PRIVATE_BUILD_DESC="nakasi-user 5.1 LMY47D 1743759 release-keys"
+    BUILD_FINGERPRINT=google/nakasi/grouper:5.1.1/LMY48B/1863243:user/release-keys \
+    PRIVATE_BUILD_DESC="nakasi-user 5.1.1 LMY48B 1863243 release-keys"
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
