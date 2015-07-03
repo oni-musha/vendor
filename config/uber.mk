@@ -24,7 +24,7 @@ else
 AND_TC_NAME := GCC
 endif
 
-AND_TC_DATE := $(filter 2015% ,$(AND_TC_VERSION))
+AND_TC_DATE := $(filter 20150% 20151% ,$(AND_TC_VERSION))
 ifeq ($(AND_TC_DATE),)
 	AND_TC_DATE := $(filter 2014% ,$(AND_TC_VERSION))
 endif
@@ -48,7 +48,7 @@ else
 KERNEL_TC_NAME := GCC
 endif
 
-KERNEL_TC_DATE := $(filter 2015% ,$(KERNEL_TC_VERSION))
+KERNEL_TC_DATE := $(filter 20150% 20151% ,$(KERNEL_TC_VERSION))
 
 ifeq ($(KERNEL_TC_DATE),)
 	KERNEL_TC_DATE := $(filter 2014% ,$(KERNEL_TC_VERSION))
