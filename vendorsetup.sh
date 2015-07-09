@@ -1,3 +1,2 @@
 add_lunch_combo optipop_hammerhead-user
 add_lunch_combo darkpop_hammerhead-user
-add_lunch_combo optipop_shamu-userdebug
