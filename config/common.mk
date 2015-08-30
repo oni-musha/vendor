@@ -109,6 +109,3 @@ PRODUCT_PACKAGES += \
     LockClock \
     Exchange2 \
     Viper4Android
-
-# Squisher Location
-SQUISHER_SCRIPT := vendor/optipop/tools/squisher
