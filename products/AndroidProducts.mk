@@ -1,4 +1,4 @@
-# Copyright (C) 2015 OptiPop Project
+# Copyright (C) 2015 DARKPOP Project
 #
 # Licensed under the Apurityche License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,30 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq (optipop_hammerhead,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_hammerhead.mk
-endif
-
 ifeq (darkpop_hammerhead,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/darkpop_hammerhead.mk
-endif
-
-ifeq (optipop_shamu,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_shamu.mk
-endif
-
-ifeq (optipop_manta,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_manta.mk
-endif
-
-ifeq (optipop_flo,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_flo.mk
-endif
-
-ifeq (optipop_grouper,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_grouper.mk
-endif
-
-ifeq (optipop_mako,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/optipop_mako.mk
 endif
