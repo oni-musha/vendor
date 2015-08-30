@@ -72,11 +72,6 @@ PRODUCT_COPY_FILES += \
     vendor/optipop/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/optipop/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh
 
-# QuickBoot (included automagically for non-oppo qcom devices)
-PRODUCT_PACKAGES += \
-    QuickBoot \
-    init.vanir.quickboot.rc
-
 PRODUCT_COPY_FILES += \
     vendor/optipop/proprietary/common/xbin/sysrw:system/xbin/sysrw \
     vendor/optipop/proprietary/common/xbin/sysro:system/xbin/sysro \
