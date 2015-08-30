@@ -112,7 +112,8 @@ PRODUCT_PACKAGES += \
     ScreenRecorder \
     libscreenrecorder \
     LockClock \
-    Exchange2
+    Exchange2 \
+    Viper4Android
 
 # Squisher Location
 SQUISHER_SCRIPT := vendor/optipop/tools/squisher
