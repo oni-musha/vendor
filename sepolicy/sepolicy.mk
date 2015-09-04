@@ -8,7 +8,6 @@ BOARD_SEPOLICY_DIRS += \
 
 BOARD_SEPOLICY_UNION += \
 service_contexts \
-system.te \
-mediaserver.te
+system.te
   
 
