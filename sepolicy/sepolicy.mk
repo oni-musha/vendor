@@ -1,10 +1,10 @@
 #
 # This policy configuration will be used by all products that
-# inherit from SimpleAOSP
+# inherit from DARKPOP
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/optipop/sepolicy
+    vendor/darkpop/sepolicy
 
 BOARD_SEPOLICY_UNION += \
 service_contexts \

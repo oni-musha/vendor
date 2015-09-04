@@ -22,5 +22,5 @@
 
 LOCAL_PATH := $(call my-dir)
 
-# Include OptiPop common configuration
-include vendor/optipop/config/uber.mk
+# Include DARKPOP common configuration
+include vendor/darkpop/config/uber.mk

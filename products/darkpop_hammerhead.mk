@@ -1,4 +1,4 @@
-# Copyright (C) 2015 OptiPop Project
+# Copyright (C) 2015 DARKPOP Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Include Darkpop common configuration
-include vendor/optipop/config/common.mk
+include vendor/darkpop/config/common.mk
 
 # Inherit AOSP device configuration
 $(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
@@ -30,4 +30,4 @@ TARGET_KERNEL_CONFIG := optipop_hammerhead_defconfig
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
-    vendor/optipop/prebuilt/bootanimation/bootanimation_1080.zip:system/media/bootanimation.zip
+    vendor/darkpop/prebuilt/bootanimation/bootanimation_1080.zip:system/media/bootanimation.zip
