@@ -15,3 +15,7 @@
 ifeq (darkpop_hammerhead,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/darkpop_hammerhead.mk
 endif
+
+ifeq (darkpop_shamu,$(TARGET_PRODUCT))
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/darkpop_shamu.mk
+endif
