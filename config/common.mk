@@ -107,5 +107,4 @@ PRODUCT_PACKAGES += \
     ScreenRecorder \
     libscreenrecorder \
     LockClock \
-    Exchange2 \
-    Viper4Android
+    Exchange2
