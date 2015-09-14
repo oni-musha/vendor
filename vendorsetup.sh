@@ -1,2 +1,3 @@
 add_lunch_combo darkpop_hammerhead-user
+add_lunch_combo darkpop_mako-user
 add_lunch_combo darkpop_shamu-user
